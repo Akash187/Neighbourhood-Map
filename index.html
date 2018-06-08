@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>NewYork Location Map</title>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="dropdown" style="font-size:2.5em; color:White" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <h1>NewYork Location</h1>
+    </header>
+    <div class='content'>
+        <nav id="sidebar">
+            <div class="searchBar">
+                <input id="searchTerm" data-bind="value: searchText, valueUpdate: 'afterkeydown', event: {keyup: filterList}" type="text" name="searchTerm" placeholder="Search food, places...">
+            </div>
+            <ul data-bind="foreach: mapArray">
+                <li data-bind="css: {active: selected},text: title, click: $parent.setSelected, visible:show"></li>
+            </ul>
+            <div id="map-error">
+                <h4 data-bind="text: errorDisplay"></h4>
+            </div>
+        </nav>
+        <main id="map"></main>
+    </div>
+    <script src="js/script.js"></script>
+    <script src="js/libs/jquery.min.js"></script>
+    <script src="js/libs/knockout-3.4.2.js"></script>
+    <!--<script src="js/script.js"></script>-->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADqLb0_Ez_6IYmDWHfWSmnoclJ5Zrclhs&v=3&callback=initMap" onerror="mapError()">
+    </script>
+
+</body>
+
+</html>
