@@ -1,5 +1,6 @@
 # Neighbourhood-project
 ## The project is developed for Front End Developer Nanodegree Udacity
+### Live project at https://placesnearnewyork.netlify.com/
 ### How to Use the app
 1. Download the project
 2. open the index.html file in chrome
